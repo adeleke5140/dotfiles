@@ -20,6 +20,13 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+# Load zsh-completions
+autoload -U compinit && compinit
+
+#Fzf tab needs to be loaded after compint
+#but before auto suggestions
+zinit light Aloxaf/fzf-tab
+
 # Add Plugins 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -28,13 +35,7 @@ zinit light zsh-users/zsh-autosuggestions
 # Add snippet
 zinit snippet OMZP::git
 
-# Load zsh-completions
-autoload -U compinit && compinit
-
 zinit cdreplay -q
-
-#Fzf tab needs to be loaded after 
-zinit light Aloxaf/fzf-tab
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -61,6 +62,7 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
