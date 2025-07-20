@@ -74,7 +74,7 @@ alias lf='~/go/bin/lf'
 eval "$(fzf --zsh)" 
 
 # Add values to path
-export PATH="$PATH:/root/.local/bin"
+export PATH="$PATH:/home/kenny09/.local/bin"
 
 # Initialize Zoxide
 eval "$(zoxide init --cmd cd zsh)"
