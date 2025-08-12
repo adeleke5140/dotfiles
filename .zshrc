@@ -80,3 +80,26 @@ export PATH="$PATH:/home/kenny09/.local/bin"
 eval "$(zoxide init --cmd cd zsh)"
 
 export PATH="$PATH:/usr/local/go/bin"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kenny/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/kenny/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+# bun completions
+[ -s "/Users/kenny/.bun/_bun" ] && source "/Users/kenny/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pfetch 
+export PATH="$PATH:/Users/kenny/dotfiles/pfetch"
