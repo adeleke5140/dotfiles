@@ -69,7 +69,9 @@ alias ls='ls --color'
 alias c='clear'
 alias lf='~/go/bin/lf'
 alias ff='fastfetch'
-
+alias cm='claude-monitor'
+alias d='pnpm dev'
+alias id='pnpm install && pnpm dev'
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)" 
@@ -104,3 +106,16 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pfetch 
 export PATH="$PATH:/Users/kenny/dotfiles/pfetch"
+
+# opencode
+export PATH=/Users/kenny/.opencode/bin:$PATH
+
+# nvm path stuff
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# python3
+export PYTHONHOME=/Library/Frameworks/Python.framework/Versions/3.11
+export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
+
