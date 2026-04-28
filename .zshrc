@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Configure with a clock
+# echo "Good morning, $USER"
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -23,6 +26,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # Load zsh-completions
 autoload -U compinit && compinit
 
+fpath=(~/.zfunc $fpath)
 #Fzf tab needs to be loaded after compint
 #but before auto suggestions
 zinit light Aloxaf/fzf-tab
@@ -65,10 +69,11 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
+alias ls='eza --icons'
 alias c='clear'
 alias lf='~/go/bin/lf'
 alias ff='fastfetch'
+alias pf='pfetch'
 alias cm='claude-monitor'
 alias d='pnpm dev'
 alias id='pnpm install && pnpm dev'
@@ -82,20 +87,14 @@ export PATH="$PATH:/home/kenny09/.local/bin"
 # Initialize Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-export PATH="$PATH:/usr/local/go/bin"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/kenny/.lmstudio/bin"
-# End of LM Studio CLI section
-
-export PATH="$HOME/.local/bin:$PATH"
-
+export PATH="$PATH:$HOME/.local/bin:$HOME/dev/worldbanc/private/bin:$HOME/usr/local/go/bin"
 # pnpm
 export PNPM_HOME="/Users/kenny/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
 # pnpm end
 # bun completions
 [ -s "/Users/kenny/.bun/_bun" ] && source "/Users/kenny/.bun/_bun"
@@ -105,7 +104,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pfetch 
-export PATH="$PATH:/Users/kenny/dotfiles/pfetch"
+export PATH="$PATH:$HOME/dotfiles/pfetch"
 
 # opencode
 export PATH=/Users/kenny/.opencode/bin:$PATH
@@ -116,6 +115,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # python3
-export PYTHONHOME=/Library/Frameworks/Python.framework/Versions/3.11
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
 
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+export PATH="$PATH:$HOME/.local/opt/go/bin"
+export PATH="$PATH:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin"
