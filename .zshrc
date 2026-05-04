@@ -90,7 +90,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/dev/worldbanc/private/bin:$HOME/usr/local/go/bin"
 # pnpm
-export PNPM_HOME="/Users/kenny/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -98,7 +98,7 @@ esac
 
 # pnpm end
 # bun completions
-[ -s "/Users/kenny/.bun/_bun" ] && source "/Users/kenny/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -108,7 +108,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$HOME/dotfiles/pfetch"
 
 # opencode
-export PATH=/Users/kenny/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
 
 # nvm path stuff
 export NVM_DIR="$HOME/.nvm"
