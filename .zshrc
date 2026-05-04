@@ -77,6 +77,7 @@ alias pf='pfetch'
 alias cm='claude-monitor'
 alias d='pnpm dev'
 alias id='pnpm install && pnpm dev'
+alias gis='git status'
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)" 
@@ -122,3 +123,4 @@ export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
 
 export PATH="$PATH:$HOME/.local/opt/go/bin"
 export PATH="$PATH:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin"
+eval "$($HOME/.local/bin/mise activate zsh)"
