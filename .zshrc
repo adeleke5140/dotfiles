@@ -69,7 +69,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='eza --icons'
+alias ls='eza -1 --icons'
 alias c='clear'
 alias lf='~/go/bin/lf'
 alias ff='fastfetch'
