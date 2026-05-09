@@ -1,6 +1,6 @@
 # My dotfiles
 
-This directory contains the dotfiles for my unix devices. I use it in WSL2 and Mac. 
+This directory contains the dotfiles for my unix devices. I use it on Omarchy and Mac. 
 
 ## Requirements
 
@@ -42,5 +42,5 @@ then use GNU stow to create symlinks
 $ stow .
 ```
 
-For anything that's not clear, check out [Dreams of Autonomy's video](https://www.youtube.com/watch?v=y6XCebnB9gs&ab_channel=DreamsofAutonomy)
+For anything that's unclear, check out [Dreams of Autonomy's video](https://www.youtube.com/watch?v=y6XCebnB9gs&ab_channel=DreamsofAutonomy)
 
