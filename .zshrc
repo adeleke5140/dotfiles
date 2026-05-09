@@ -78,6 +78,8 @@ alias cm='claude-monitor'
 alias d='pnpm dev'
 alias id='pnpm install && pnpm dev'
 alias gis='git status'
+alias gpp='git pull && g push'
+alias sgp='git stash && git pull && git push'
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)" 
@@ -85,18 +87,16 @@ eval "$(fzf --zsh)"
 # Add values to path
 export PATH="$PATH:/home/kenny09/.local/bin"
 
-# Initialize Zoxide
-eval "$(zoxide init --cmd cd zsh)"
-
 export PATH="$PATH:$HOME/.local/bin:$HOME/dev/worldbanc/private/bin:$HOME/usr/local/go/bin"
+
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-
 # pnpm end
+
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
@@ -124,3 +124,7 @@ export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
 export PATH="$PATH:$HOME/.local/opt/go/bin"
 export PATH="$PATH:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin"
 eval "$($HOME/.local/bin/mise activate zsh)"
+
+# Initialize Zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
