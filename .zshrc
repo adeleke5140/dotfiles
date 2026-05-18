@@ -69,7 +69,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='eza -1 --icons'
+alias ls='eza -1 --grid --icons'
 alias c='clear'
 alias lf='~/go/bin/lf'
 alias ff='fastfetch'
@@ -85,7 +85,7 @@ alias sgp='git stash && git pull && git push'
 eval "$(fzf --zsh)" 
 
 # Add values to path
-export PATH="$PATH:/home/kenny09/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/dev/worldbanc/private/bin:$HOME/usr/local/go/bin"
 
@@ -123,6 +123,7 @@ export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
 
 export PATH="$PATH:$HOME/.local/opt/go/bin"
 export PATH="$PATH:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin"
+
 eval "$($HOME/.local/bin/mise activate zsh)"
 
 # Initialize Zoxide
