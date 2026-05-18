@@ -80,14 +80,12 @@ alias id='pnpm install && pnpm dev'
 alias gis='git status'
 alias gpp='git pull && g push'
 alias sgp='git stash && git pull && git push'
+alias yz="yazi"
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)" 
 
-# Add values to path
-export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
-
-export PATH="$PATH:$HOME/.local/bin:$HOME/dev/worldbanc/private/bin:$HOME/usr/local/go/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/dev/worldbanc/private/bin:$HOME/usr/local/go/bin:$HOME/bin"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -110,17 +108,10 @@ export PATH="$PATH:$HOME/dotfiles/pfetch"
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
 
-# nvm path stuff
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # python3
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
 
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
+# go stuff
 export PATH="$PATH:$HOME/.local/opt/go/bin"
 export PATH="$PATH:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin"
 
