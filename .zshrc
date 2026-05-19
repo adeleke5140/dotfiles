@@ -5,8 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Configure with a clock
-# echo "Good morning, $USER"
+mkcd () {
+  if [[ -z "$1" ]]; then
+    echo "usage: mkcd <dir>" >&2
+    return 1
+  fi
+  \mkdir -p "$1"
+  cd "$1"
+}
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -119,4 +125,4 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 
 # Initialize Zoxide
 eval "$(zoxide init --cmd cd zsh)"
-
+eval "$(pitchfork activate zsh)"
