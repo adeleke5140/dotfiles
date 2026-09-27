@@ -75,7 +75,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='eza -1 --grid --icons'
+alias ls='eza -1 -l --icons'
 alias c='clear'
 alias lf='~/go/bin/lf'
 alias ff='fastfetch'
@@ -87,6 +87,7 @@ alias gis='git status'
 alias gpp='git pull && g push'
 alias sgp='git stash && git pull && git push'
 alias yz="yazi"
+alias n="nvim"
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)" 
@@ -101,12 +102,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pfetch 
 export PATH="$PATH:$HOME/dotfiles/pfetch"
@@ -117,12 +112,10 @@ export PATH=$HOME/.opencode/bin:$PATH
 # python3
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
 
-# go stuff
-export PATH="$PATH:$HOME/.local/opt/go/bin"
-export PATH="$PATH:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin"
+# Path  
+export PATH="$HOME/go/bin:$HOME/.local/share/nvim/mason/bin:$HOME/.local/opt/go/bin:$HOME/.nimble/bin:$PATH"
 
 eval "$($HOME/.local/bin/mise activate zsh)"
 
 # Initialize Zoxide
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(pitchfork activate zsh)"
