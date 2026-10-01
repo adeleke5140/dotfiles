@@ -1,0 +1,1 @@
+/home/kehinde/.config/omarchy/current/theme/neovim.lua
