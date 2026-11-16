@@ -37,7 +37,7 @@ fpath=(~/.zfunc $fpath)
 #but before auto suggestions
 zinit light Aloxaf/fzf-tab
 
-# Add Plugins 
+# Add Plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -90,7 +90,7 @@ alias yz="yazi"
 alias n="nvim"
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fzf --zsh)" 
+eval "$(fzf --zsh)"
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/dev/worldbanc/private/bin:$HOME/usr/local/go/bin:$HOME/bin"
 
@@ -103,7 +103,7 @@ esac
 # pnpm end
 
 
-# pfetch 
+# pfetch
 export PATH="$PATH:$HOME/dotfiles/pfetch"
 
 # opencode
@@ -112,10 +112,20 @@ export PATH=$HOME/.opencode/bin:$PATH
 # python3
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
 
-# Path  
+# Path
 export PATH="$HOME/go/bin:$HOME/.local/share/nvim/mason/bin:$HOME/.local/opt/go/bin:$HOME/.nimble/bin:$PATH"
 
 eval "$($HOME/.local/bin/mise activate zsh)"
 
 # Initialize Zoxide
 eval "$(zoxide init --cmd cd zsh)"
+
+# Initialize direnv
+eval "$(direnv hook zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.config/vite-plus/env"

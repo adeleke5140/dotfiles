@@ -1,6 +1,6 @@
 # My dotfiles
 
-This directory contains the dotfiles for my unix devices. I use it on Omarchy and Mac. 
+This directory contains the dotfiles for my unix devices. I use it on ~Omarchy~ and Mac. 
 
 ## Requirements
 
